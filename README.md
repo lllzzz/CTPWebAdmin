@@ -1,1 +1,3 @@
 #CTPWebAdmin
+
+本系统为CTPService与CTPOrderService提供简单的页面查看功能。PHP实现，应用Laravel框架，版本5.3。系统利用composer进行依赖管理，初始化需要安装依赖。具体操作请查看Laravel官网。
