@@ -1,91 +1,89 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
     <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-
         <title>Laravel</title>
-
-        <!-- Fonts -->
-        <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
-
-        <!-- Styles -->
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="https://fonts.googleapis.com/css?family=Lato:100" rel="stylesheet" type="text/css">
+        <link href="//cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet">
         <style>
             html, body {
-                background-color: #fff;
-                color: #636b6f;
-                font-family: 'Raleway', sans-serif;
-                font-weight: 100;
-                height: 100vh;
+                height: 100%;
+            }
+
+            body {
                 margin: 0;
+                padding: 0;
+                width: 100%;
+                display: table;
+                font-weight: 100;
+                font-family: 'Lato';
             }
 
-            .full-height {
-                height: 100vh;
-            }
-
-            .flex-center {
-                align-items: center;
-                display: flex;
-                justify-content: center;
-            }
-
-            .position-ref {
-                position: relative;
-            }
-
-            .top-right {
-                position: absolute;
-                right: 10px;
-                top: 18px;
+            .container {
+                text-align: center;
+                display: table-cell;
+                vertical-align: middle;
             }
 
             .content {
                 text-align: center;
+                display: inline-block;
             }
 
             .title {
-                font-size: 84px;
+                font-size: 96px;
             }
 
-            .links > a {
-                color: #636b6f;
-                padding: 0 25px;
-                font-size: 12px;
-                font-weight: 600;
-                letter-spacing: .1rem;
-                text-decoration: none;
-                text-transform: uppercase;
+            .form-signin {
+            max-width: 330px;
+            padding: 15px;
+            margin: 0 auto;
             }
-
-            .m-b-md {
-                margin-bottom: 30px;
+            .form-signin .form-signin-heading,
+            .form-signin .checkbox {
+            margin-bottom: 10px;
+            }
+            .form-signin .checkbox {
+            font-weight: normal;
+            }
+            .form-signin .form-control {
+            position: relative;
+            height: auto;
+            -webkit-box-sizing: border-box;
+             -moz-box-sizing: border-box;
+                  box-sizing: border-box;
+            padding: 10px;
+            font-size: 16px;
+            }
+            .form-signin .form-control:focus {
+            z-index: 2;
+            }
+            .form-signin input[type="email"] {
+            margin-bottom: -1px;
+            border-bottom-right-radius: 0;
+            border-bottom-left-radius: 0;
+            }
+            .form-signin input[type="password"] {
+            margin-bottom: 10px;
+            border-top-left-radius: 0;
+            border-top-right-radius: 0;
             }
         </style>
     </head>
     <body>
-        <div class="flex-center position-ref full-height">
-            @if (Route::has('login'))
-                <div class="top-right links">
-                    <a href="{{ url('/login') }}">Login</a>
-                    <a href="{{ url('/register') }}">Register</a>
-                </div>
-            @endif
-
+        <div class="container">
             <div class="content">
-                <div class="title m-b-md">
-                    Laravel
+                <div class="title">CTP</div>
+            </div>
+            <form method="POST" action="/login" class="form-signin">
+                {!! csrf_field() !!}
+
+                <div>
+                    <input type="password" name="password" id="password" class="form-control" placeholder="Password">
+                    <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
                 </div>
 
-                <div class="links">
-                    <a href="https://laravel.com/docs">Documentation</a>
-                    <a href="https://laracasts.com">Laracasts</a>
-                    <a href="https://laravel-news.com">News</a>
-                    <a href="https://forge.laravel.com">Forge</a>
-                    <a href="https://github.com/laravel/laravel">GitHub</a>
-                </div>
-            </div>
+            </form>
         </div>
     </body>
 </html>
